@@ -1,3 +1,6 @@
-<div class="{{ wrapperClass }} hover:brightness-110 transition-all">
-  <a [routerLink]="[href]" class="{{ linkClass }}"> {{ text }} </a>
+<div
+  class="{{ className }} hover:brightness-110 transition-all cursor-pointer"
+  (click)="link()"
+>
+  {{ text }}
 </div>
