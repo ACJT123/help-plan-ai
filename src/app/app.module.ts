@@ -10,10 +10,31 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { ButtonComponent } from './shared/button/button.component';
 import { CommonModule } from '@angular/common';
+import { SidenavComponent } from './shared/sidenav/sidenav.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent],
-  imports: [BrowserModule, AppRoutingModule, CommonModule],
+  declarations: [AppComponent, ButtonComponent, SidenavComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+  ],
   providers: [
     provideClientHydration(),
     provideFirebaseApp(() =>
@@ -28,6 +49,7 @@ import { CommonModule } from '@angular/common';
       })
     ),
     provideAuth(() => getAuth()),
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
 })
