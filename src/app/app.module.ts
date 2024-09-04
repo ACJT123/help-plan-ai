@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { ButtonComponent } from './shared/button/button.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, ButtonComponent],
+  imports: [BrowserModule, AppRoutingModule, CommonModule],
   providers: [
     provideClientHydration(),
     provideFirebaseApp(() =>
